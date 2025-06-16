@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+    @apply border border-gray-300 rounded px-3 py-2 w-full;
+  }
+
+  @keyframes wave-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes wave-fast {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.animate-wave-slow {
+  animation: wave-slow 20s linear infinite;
+}
+
+.animate-wave-fast {
+  animation: wave-fast 10s linear infinite;
+}
+
+  
