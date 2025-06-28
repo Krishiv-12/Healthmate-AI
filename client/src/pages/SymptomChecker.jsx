@@ -20,7 +20,7 @@ function SymptomChecker() {
       const reply = aiRes.data.reply;
       setResponse(reply);
 
-      await axiosInstance.post('http://localhost:5000/api/chat/save-chat', {
+      await axiosInstance.post('/api/chat/save-chat', {
         symptoms,
         aiResponse: reply,
       });
