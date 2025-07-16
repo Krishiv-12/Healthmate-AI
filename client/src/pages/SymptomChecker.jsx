@@ -13,7 +13,7 @@ function SymptomChecker() {
     setLoading(true);
 
     try {
-      const aiRes = await axiosInstance.post('http://localhost:5000/api/ai/symptom-check', {
+      const aiRes = await axiosInstance.post('/api/ai/symptom-check', {
         symptoms,
       });
 
