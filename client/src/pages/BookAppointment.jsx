@@ -13,13 +13,18 @@ function BookAppointment() {
     problem: '',
   });
 
-  useEffect(() => {
-    const fetchDoctors = async () => {
-      const res = await axiosInstance.get('/auth/doctors');
+useEffect(() => {
+  const fetchDoctors = async () => {
+    try {
+      const res = await axiosInstance.get('/api/auth/doctors');
       setDoctors(res.data);
-    };
-    fetchDoctors();
-  }, []);
+    } catch (error) {
+      console.error("Failed to fetch doctors:", error.response?.data || error.message);
+    }
+  };
+  fetchDoctors();
+}, []);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
