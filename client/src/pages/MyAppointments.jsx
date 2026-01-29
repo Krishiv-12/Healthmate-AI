@@ -6,7 +6,7 @@ function MyAppointments() {
 
   useEffect(() => {
     const fetchAppointments = async () => {
-      const res = await axiosInstance.get('/appointments/my');
+      const res = await axiosInstance.get('/api/appointments/my');
       setAppointments(res.data);
     };
     fetchAppointments();

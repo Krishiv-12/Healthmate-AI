@@ -6,7 +6,7 @@ function MyConsultations() {
 
   useEffect(() => {
     const fetchChats = async () => {
-      const res = await axiosInstance.get('/chat/my-chats');
+      const res = await axiosInstance.get('/api/chat/my-chats');
       setChats(res.data);
     };
     fetchChats();

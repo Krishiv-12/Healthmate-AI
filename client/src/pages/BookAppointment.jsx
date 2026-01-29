@@ -29,7 +29,7 @@ useEffect(() => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axiosInstance.post('/appointments', form);
+      await axiosInstance.post('/api/appointments', form);
       alert('Appointment booked successfully!');
       setForm({
         name: '',

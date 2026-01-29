@@ -10,7 +10,7 @@ function UploadReport() {
 
   useEffect(() => {
     // Get all completed appointments
-    axiosInstance.get("/appointments/my").then((res) => {
+    axiosInstance.get("/api/appointments/my").then((res) => {
       setAppointments(res.data.filter((a) => a.status === "Completed"));
     });
 
@@ -20,7 +20,7 @@ function UploadReport() {
 
   const fetchReports = async () => {
     try {
-      const res = await axiosInstance.get("/reports/my");
+      const res = await axiosInstance.get("/api/reports/my");
       setUploadedReports(res.data);
     } catch (err) {
       console.error("Failed to fetch reports");
