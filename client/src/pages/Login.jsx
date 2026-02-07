@@ -26,7 +26,7 @@ function Login() {
   return (
     <div className="flex min-h-screen">
       {/* Left Section */}
-      <div className="hidden md:flex flex-col justify-center items-center w-1/2 bg-gradient-to-r from-indigo-600 to-white text-white px-10">
+      <div className="hidden md:flex flex-col justify-center items-center w-1/2 bg-gradient-to-r from-indigo-600 to-white text-black px-10">
         <h1 className="text-4xl font-bold mb-4">Hey There!</h1>
         <p className="text-lg mb-2">Welcome Back.</p>
         <p className="text-sm mb-6 text-center">

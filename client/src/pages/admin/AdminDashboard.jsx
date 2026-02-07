@@ -10,7 +10,8 @@ function AdminDashboard() {
   });
 
   useEffect(() => {
-    axiosInstance.get('/admin/stats').then(res => {
+    axiosInstance.get('/api/admin/stats').then(res => {
+      console.log(res.data);
       setStats(res.data);
     });
   }, []);

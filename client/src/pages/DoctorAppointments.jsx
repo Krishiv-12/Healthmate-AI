@@ -6,7 +6,7 @@ function DoctorAppointments() {
 
   const fetchAppointments = async () => {
     try {
-      const res = await axiosInstance.get('/appointments/doctor');
+      const res = await axiosInstance.get('/api/appointments/doctor');
       setAppointments(res.data);
     } catch (err) {
       console.error('Error fetching appointments', err);
@@ -19,7 +19,7 @@ function DoctorAppointments() {
 
   const handleStatusUpdate = async (id, status) => {
     try {
-      await axiosInstance.put(`/appointments/${id}/status`, { status });
+      await axiosInstance.put(`/api/appointments/${id}/status`, { status });
       fetchAppointments(); // Refresh the list
     } catch (err) {
       console.error('Error updating status:', err);

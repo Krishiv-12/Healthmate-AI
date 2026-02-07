@@ -9,44 +9,54 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const handleAppointmentClick = () => {
-    if (!user) {
-      navigate("/login");
-    } else {
-      navigate("/book-appointment");
-    }
+    if (!user) navigate("/login");
+    else navigate("/book-appointment");
   };
 
   return (
     <>
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-16 py-16 bg-slate-100 min-h-screen">
-        {/* Left Text Content */}
-        <div className="w-full md:w-1/2 mb-10 md:mb-0">
-          <h1 className="text-4xl md:text-8xl font-bold text-gray-900 leading-tight mb-6">
-            Serving Your <span className="text-orange-500">Health</span> Needs
-            Is Our Priority.
-          </h1>
-          <p className="text-gray-600 mb-6 text-lg">
-            Your health is our mission. At HealthMate AI, we blend expert care
-            with cutting-edge AI tools to provide personalized medical support
-            when you need it most.
-          </p>
-          <button
-            onClick={handleAppointmentClick}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded shadow-md transition"
-          >
-            Make Appointment
-          </button>
-        </div>
+      {/* HERO SECTION */}
+      <div
+        className="relative min-h-screen flex items-center px-6 md:px-20"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1756982477676-420df08af67c?q=80&w=1974&auto=format&fit=crop')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+ 
+        {/* Content */}
+        <div className="relative w-full text-center flex items-center justify-center md:mt-56">
 
-        {/* Right Doctor Image */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <img
-            src={doctorImg}
-            alt="Doctor"
-            className="w-[90%] max-w-md rounded-xl drop-shadow-xl"
-          />
+          {/* LEFT TEXT */}
+          <div className="w-full md:w-1/2 text-orange-500 ">
+            <h1 className="text-5xl md:text-7xl font-semibold leading-tight mb-2 font-redrose">
+              Protecting <br />
+                What Matters Most <br />
+              <span className="text-green-500 font-redrose">
+                With AI Precision
+              </span>
+            </h1>
+
+            <p className="text-gray-200 text-lg mb-8 font-outfit">
+              HealthMate AI combines expert doctors and smart technology to
+              provide faster, smarter, and personalized healthcare for you and
+              your family.
+            </p>
+
+              <button
+                onClick={handleAppointmentClick}
+                className="bg-orange-500 hover:bg-orange-600 text-white px-7 py-3 rounded-lg font-semibold shadow-lg transition-all hover:scale-105 font-montserratAlt"
+              >
+                Book Appointment
+              </button>
+          </div>
+
         </div>
       </div>
+
+      {/* EXTRA SECTIONS */}
       <About />
       <Contact />
     </>
@@ -54,4 +64,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-//

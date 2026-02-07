@@ -23,8 +23,8 @@ function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-indigo-600 text-white px-4 md:px-10 py-6 flex justify-between items-center relative">
-      <Link to="/" className="text-xl md:text-2xl font-bold">
+    <nav className="text-black absolute w-full z-10 px-4 md:px-10 py-4 flex justify-between items-center border-b-2 bg-white/20 backdrop-blur-xl font-montserratAlt text-sm">
+      <Link to="/" className="font-poiret text-black text-xl md:text-2xl font-semibold">
         HealthMate AI
       </Link>
 
@@ -33,12 +33,12 @@ function Navbar() {
         {!user && (
           <>
             <Link to="/login" className="transition duration-300">
-              <span className="bg-orange-500 rounded-md px-4 py-2 hover:bg-orange-600">
+              <span className="bg-orange-500 rounded-md px-4 py-2 hover:bg-orange-600 font-montserratAlt text-white">
                 Login
               </span>
             </Link>
             <Link to="/register" className="transition duration-300">
-              <span className="bg-orange-500 rounded px-4 py-2 hover:bg-orange-600">
+              <span className="bg-orange-500 rounded px-4 py-2 hover:bg-orange-600 font-montserratAlt text-white">
                 Register
               </span>
             </Link>
@@ -55,10 +55,10 @@ function Navbar() {
               { to: "/consultations", label: "My Consultations" },
             ].map((link) => (
               <Link key={link.to} to={link.to} className="relative group">
-                <span className="group-hover:text-white transition">
+                <span className="group-hover:text-black transition">
                   {link.label}
                 </span>
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all group-hover:w-full" />
               </Link>
             ))}
           </>
@@ -93,7 +93,7 @@ function Navbar() {
         {user && (
           <button
             onClick={handleLogout}
-            className="bg-orange-500 px-4 py-2 rounded-md hover:bg-orange-600"
+            className="bg-orange-500 px-4 py-2 rounded-md hover:bg-orange-600 text-white transition"
           >
             Logout
           </button>
@@ -101,13 +101,13 @@ function Navbar() {
       </div>
 
       {/* Hamburger Icon */}
-      <button onClick={toggleMenu} className="md:hidden text-2xl z-50">
+      <button onClick={toggleMenu} className="md:hidden text-2xl z-50 text-black">
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-blue-400 flex flex-col gap-4 p-6 z-40 md:hidden">
+        <div className="absolute top-full left-0 w-full bg-black/80 backdrop-blur-2xl flex flex-col gap-4 p-6 z-40 md:hidden">
           {!user && (
             <>
               <Link to="/login" onClick={toggleMenu} className="text-white">

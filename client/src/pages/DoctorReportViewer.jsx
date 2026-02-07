@@ -7,14 +7,14 @@ function DoctorReportViewer() {
   const [reports, setReports] = useState([]);
 
   useEffect(() => {
-    axiosInstance.get('/appointments/doctor').then(res => {
+    axiosInstance.get('/api/appointments/doctor').then(res => {
       setAppointments(res.data.filter(a => a.status === 'Completed'));
     });
   }, []);
 
   const fetchReports = async (appointmentId) => {
     try {
-      const res = await axiosInstance.get(`/reports/appointment/${appointmentId}`);
+      const res = await axiosInstance.get(`/api/reports/appointment/${appointmentId}`);
       setReports(res.data);
     } catch (err) {
       console.error('Error fetching reports:', err);
